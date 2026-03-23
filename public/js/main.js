@@ -70,16 +70,15 @@ commentForm.addEventListener('submit', async (e) => {
     }
 });
 
-// 3. Evento: Eliminar reseña (Delegación de eventos sobre la lista padre)
+// 3. Evento: Eliminar reseña
 commentsList.addEventListener('click', async (e) => {
-    // Detectar si el clic provino del botón o del SVG interior
     const deleteBtn = e.target.closest('.delete-btn');
     if (!deleteBtn) return;
 
     const commentId = deleteBtn.getAttribute('data-id');
 
     // Confirmación antes de eliminar
-    if (!window.confirm(`¿Estás seguro de que deseas eliminar esta reseña para siempre?`)) {
+    if (!window.confirm(`¿Estás seguro de que quieres eliminar esta reseña para siempre?`)) {
         return;
     }
 

@@ -1,8 +1,5 @@
-/**
- * Capa lógica exclusiva para conexión a red local (Fetch API, Async/Await).
- */
-
-const API_URL = 'http://localhost:3000/comments';
+// Ruta relativa
+const API_URL = '/comments';
 
 // GET - Obtener la lista de reseñas
 export async function getComments() {

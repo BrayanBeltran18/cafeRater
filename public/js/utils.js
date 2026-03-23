@@ -1,8 +1,4 @@
-/**
- * Lógica pura separada del DOM. Validaciones y formateo de fechas.
- */
-
-// Formateador de tiempo relativo
+// Formateador de tiempo
 export function formatTimeAgo(isoDateString) {
     if (!isoDateString) return "Hace un momento";
 
@@ -12,7 +8,7 @@ export function formatTimeAgo(isoDateString) {
     // Diferencia en segundos
     const diffInSeconds = Math.round((date - now) / 1000);
 
-    // Configurar formateador relativo en español
+    // Configurar formateador relativo
     const rtf = new Intl.RelativeTimeFormat('es', { numeric: 'auto', style: 'long' });
 
     // Unidades de tiempo
@@ -33,7 +29,7 @@ export function formatTimeAgo(isoDateString) {
     }
 }
 
-// Validador de datos del formulario (Pure function)
+// Validador de datos del formulario
 export function validateCommentData(data) {
     const errors = [];
 

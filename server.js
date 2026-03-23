@@ -49,7 +49,6 @@ app.post('/comments', (req, res) => {
         cafeName: cafeName ? cafeName.trim() : "Cafetería Default",
         rating: rating ? parseInt(rating, 10) : 5,
         message: message.trim(),
-        // Usar la fecha recibida del frontend o la actual como respaldo
         date: date || new Date().toISOString()
     };
 
