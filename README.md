@@ -20,9 +20,7 @@ Una aplicación web completa para compartir y visualizar reseñas de cafeterías
 
 ---
 
-## Cómo Funciona (Arquitectura)
-
-Al abrir la aplicación, el usuario experimenta los beneficios de una *SPA* con un ciclo de cliente/servidor desacoplado:
+## Arquitectura
 
 1. **Persistencia de Datos Rápida (Memoria):** El servidor Express almacena las reseñas en la memoria RAM `let comments = []`. Procesa validaciones de seguridad y asigna de manera autoincremental los IDs y marcas de tiempo (`timestamps`) formato ISO a cada objeto entrante.
 2. **Exposición Web API:** Todo ocurre en el *endpoint* fundamental `/comments`, el cual se comunica bidireccionalmente lanzando y aceptando únicamente paquetes de datos puros en formato JSON.
