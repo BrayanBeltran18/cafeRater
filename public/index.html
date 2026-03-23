@@ -35,10 +35,10 @@
         <header class="mb-8 text-center sm:text-left transition-all">
             <h1
                 class="text-3xl font-extrabold tracking-tight text-sb-dark sm:text-4xl flex items-center justify-center sm:justify-start gap-3">
-                Comment Wall
+                Coffee Rater.
             </h1>
             <p class="mt-2 text-lg text-sb-green font-medium">
-                Comparte tu experiencia.
+                Para que califiques a tus cafeterias favoritas.
             </p>
         </header>
 
@@ -48,16 +48,38 @@
                 <div>
                     <label for="username" class="block text-sm font-bold text-sb-dark mb-1">Nombre <span
                             class="text-red-500">*</span></label>
-                    <input type="text" id="username" name="username" placeholder="Ej. Juan Perez"
+                    <input type="text" id="username" name="username" placeholder="Por ejemplo: Cristiano Ronaldo"
                         class="w-full px-4 py-2.5 bg-slate-50 border border-slate-300 rounded-lg text-sb-dark focus:bg-white focus:ring-2 focus:ring-sb-green focus:border-sb-green outline-none transition-all duration-200"
                         required>
                 </div>
 
                 <div>
-                    <label for="message" class="block text-sm font-bold text-sb-dark mb-1">Comentario <span
+                    <label for="cafeName" class="block text-sm font-bold text-sb-dark mb-1">Cafetería <span
+                            class="text-red-500">*</span></label>
+                    <input type="text" id="cafeName" name="cafeName" placeholder="Por ejemplo: Caffenio Periférico."
+                        class="w-full px-4 py-2.5 bg-slate-50 border border-slate-300 rounded-lg text-sb-dark focus:bg-white focus:ring-2 focus:ring-sb-green focus:border-sb-green outline-none transition-all duration-200"
+                        required>
+                </div>
+
+                <div>
+                    <label for="rating" class="block text-sm font-bold text-sb-dark mb-1">Calificación <span
+                            class="text-red-500">*</span></label>
+                    <select id="rating" name="rating"
+                        class="w-full px-4 py-2.5 bg-slate-50 border border-slate-300 rounded-lg text-sb-dark focus:bg-white focus:ring-2 focus:ring-sb-green focus:border-sb-green outline-none transition-all duration-200"
+                        required>
+                        <option value="5">⭐⭐⭐⭐⭐ Excelente</option>
+                        <option value="4">⭐⭐⭐⭐ Muy bueno</option>
+                        <option value="3">⭐⭐⭐ Bueno</option>
+                        <option value="2">⭐⭐ Regular</option>
+                        <option value="1">⭐ Malo</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="message" class="block text-sm font-bold text-sb-dark mb-1">Reseña <span
                             class="text-red-500">*</span></label>
                     <textarea id="message" name="message" rows="3"
-                        placeholder="¿Qué te pareció el curso hoy? (mínimo 5 letras)"
+                        placeholder="¿Cómo fue tu experiencia? (mínimo 5 letras)"
                         class="w-full px-4 py-2.5 bg-slate-50 border border-slate-300 rounded-lg text-sb-dark focus:bg-white focus:ring-2 focus:ring-sb-green focus:border-sb-green outline-none transition-all duration-200 resize-none"
                         required minlength="5"></textarea>
                 </div>
@@ -74,6 +96,15 @@
                 <div class="flex items-center justify-end pt-2">
                     <button type="submit" id="submit-btn"
                         class="inline-flex items-center justify-center px-6 py-2.5 border border-transparent text-sm font-bold rounded-lg text-white bg-sb-green hover:bg-sb-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sb-green transition-all duration-200 shadow-sm disabled:opacity-70 disabled:cursor-not-allowed group">
+                        <!-- Icono Cargando (oculto) -->
+                        <svg id="submit-btn-spinner" class="animate-spin -ml-1 mr-2 h-4 w-4 hidden" fill="none"
+                            viewBox="0 0 24 24">
+                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4">
+                            </circle>
+                            <path class="opacity-75" fill="currentColor"
+                                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+                            </path>
+                        </svg>
                         <span id="submit-btn-text">Publicar Comentario</span>
                     </button>
                 </div>
@@ -102,8 +133,8 @@
             </div>
         </section>
 
-    </main>
-
+        <!-- Conexión al App Core (Fase 5 terminada) -->
+        <script type="module" src="./js/main.js"></script>
 </body>
 
 </html>

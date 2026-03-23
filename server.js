@@ -9,7 +9,6 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 
-// Servir archivos estáticos del frontend (Fase 2)
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Almacenamiento en memoria
@@ -17,7 +16,9 @@ let comments = [
     {
         id: 1,
         username: "Raul",
-        message: "Hola mundo!",
+        cafeName: "Starbucks Paseo",
+        rating: 5,
+        message: "El mejor latte que he probado. El lugar es muy limpio.",
         date: "2026-03-17T10:00:00.000Z"
     }
 ];
@@ -32,7 +33,7 @@ app.get('/comments', (req, res) => {
 
 // POST - Crear comentario
 app.post('/comments', (req, res) => {
-    const { username, message, date } = req.body;
+    const { username, cafeName, rating, message, date } = req.body;
 
     // Validación solicitada
     if (!username || username.trim() === '') {
@@ -45,6 +46,8 @@ app.post('/comments', (req, res) => {
     const newComment = {
         id: nextId++,
         username: username.trim(),
+        cafeName: cafeName ? cafeName.trim() : "Cafetería Default",
+        rating: rating ? parseInt(rating, 10) : 5,
         message: message.trim(),
         // Usar la fecha recibida del frontend o la actual como respaldo
         date: date || new Date().toISOString()
@@ -70,5 +73,5 @@ app.delete('/comments/:id', (req, res) => {
 
 // Arrancar el servidor
 app.listen(PORT, () => {
-    console.log(`Servidor de la Web API corriendo en http://localhost:${PORT}`);
+    console.log(`Servidor de la Web API corriendo al millón en http://localhost:${PORT}`);
 });
